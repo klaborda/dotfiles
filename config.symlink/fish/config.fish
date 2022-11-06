@@ -1,6 +1,8 @@
+set fish_greeting ""
 set -gx PATH /opt/homebrew/bin /opt/homebrew/sbin $HOME/.home/bin /usr/local/bin /usr/bin /bin /usr/sbin /sbin /opt /usr/local/sbin $HOME/.cargo/bin $PATH
-set -Ux EDITOR vim
+set -Ux EDITOR nvim
 source ~/.iterm2_shell_integration.fish
+command -qv nvim && alias vim nvim && alias vi nvim
 
 abbr --add am 'git amend'
 abbr --add o 'open'
@@ -14,12 +16,21 @@ abbr --add glogo 'git logo'
 abbr --add gp 'git push origin'
 abbr --add gpu 'git push upstream'
 abbr --add gs 'git status'
-abbr --add gb 'git br cnakazawa/'
 abbr --add l 'ls -alh'
 abbr --add c 'code .'
 abbr --add map 'xargs -n1'
 abbr --add nsize 'du -sh ./node_modules/* | sort -nr | grep "\dM.*"'
 abbr --add p 'pnpm'
+
+# NVM
+function __check_rvm --on-variable PWD --description 'Do nvm stuff'
+  status --is-command-substitution; and return
+
+  if test -f .nvmrc; and test -r .nvmrc;
+    nvm use
+  else
+  end
+end
 
 set fish_color_cwd '3d87f5'
 set fish_color_search_match --background='C2E8FF'
