@@ -4,8 +4,13 @@ local xnoremap = Remap.xnoremap
 local inoremap = Remap.inoremap
 
 nnoremap("<leader>qw", ":Ex<CR>")
+nnoremap("<leader>u", ":UndotreeShow<CR>")
 
 inoremap("<leader>jj", "<esc>")
+-- format code
+nnoremap("<leader>f", function()
+    vim.lsp.buf.format()
+end)
 
 -- keyboard training
 nnoremap("<up>", "<nop>")
