@@ -443,21 +443,19 @@ set -g @plugin 'tmux-plugins/tmux-yank'
 #     <no modifier>: copy
 #     ctrl: open
 #     shift: paste
-# set -g @plugin 'Morantron/tmux-fingers'
-# set -g @fingers-key T
-# set -g @fingers-pattern-0 '\b([a-zA-Z0-9]([a-zA-Z0-9-\.]{0,61}[a-zA-Z0-9])?(\.[a-zA-Z]{2,})+)\b'
+set -g @plugin 'Morantron/tmux-fingers'
+set -g @fingers-key space
+set -g @fingers-pattern-0 '\b([a-zA-Z0-9]([a-zA-Z0-9-\.]{0,61}[a-zA-Z0-9])?(\.[a-zA-Z]{2,})+)\b'
 #
 # Thumbs plugin replaces tmux-copycat, tmux-fzf-url, tmux-fpp, it's all-in-one
 #   C-a f to trigger hints (files, URLs, etc)
 #     <no modifier>: copy
 #     ctrl: open
 #     shift: paste
-set -g @plugin 'fcsonline/tmux-thumbs'
-set -g @thumbs-key space
-set -g @thumbs-regex-1 '\b([a-zA-Z0-9]([a-zA-Z0-9-\.]{0,61}[a-zA-Z0-9])?(\.[a-zA-Z]{2,})+)\b'
-set -g @thumbs-regex-2 '([a-zA-Z0-9]([a-zA-Z0-9-\.]{0,61}[a-zA-Z0-9])?(\.[a-zA-Z]{2,})+)'
-set -g @thumbs-command 'echo -n {} | pbcopy && tmux display-message "Copied {}"'
-set -g @thumbs-upcase-command 'tmux set-buffer {} && tmux paste-buffer'
+# set -g @plugin 'Rational-Curiosity/tmux-thumbs'
+# set -g @thumbs-key space
+# set -g @thumbs-command 'echo -n {} | pbcopy && tmux display-message "Copied {}"'
+# set -g @thumbs-upcase-command 'tmux set-buffer {} && tmux paste-buffer'
 
 set -g @plugin 'tmux-plugins/tmux-logging'
 
