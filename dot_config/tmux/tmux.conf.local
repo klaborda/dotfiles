@@ -460,7 +460,7 @@ set -g @fingers-pattern-0 '\b([a-zA-Z0-9]([a-zA-Z0-9-\.]{0,61}[a-zA-Z0-9])?(\.[a
 set -g @plugin 'tmux-plugins/tmux-logging'
 
 # Last saved environment is automatically restored when tmux is started.
-set -g @continuum-boot 'on'
+set -g @continuum-restore 'on'
 
 # -- custom variables ----------------------------------------------------------
 
