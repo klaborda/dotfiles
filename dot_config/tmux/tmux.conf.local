@@ -462,6 +462,8 @@ set -g @plugin 'tmux-plugins/tmux-logging'
 # Last saved environment is automatically restored when tmux is started.
 set -g @continuum-restore 'on'
 
+bind M-d resize-pane -U 15
+
 # -- custom variables ----------------------------------------------------------
 
 # to define a custom #{foo} variable, define a POSIX shell function between the
