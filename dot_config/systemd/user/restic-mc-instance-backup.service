@@ -1,0 +1,11 @@
+[Unit]
+Description=Offsite backup of MC instances via restic
+
+[Service]
+Type=simple
+Restart=on-failure
+RestartSec=30
+EnvironmentFile=/etc/restic-minecraft.env
+ExecStartPre=restic unlock
+ExecStart=restic backup --verbose backup /home/klaborda/.var/app/org.prismlauncher.PrismLauncher/data/PrismLauncher/instances/
+ExecStartPost=restic unlock

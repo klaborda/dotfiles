@@ -1,0 +1,10 @@
+[Unit]
+Description=Cleanup MC instance backups to restic
+
+[Timer]
+OnCalendar=*-*-* *:30:00
+Persistent=true
+RandomizedDelaySec=300
+
+[Install]
+WantedBy=timers.target

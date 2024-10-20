@@ -1,0 +1,11 @@
+[Unit]
+Description=Cleanup backups of MC instances via restic
+
+[Service]
+Type=simple
+Restart=on-failure
+RestartSec=30
+EnvironmentFile=/etc/restic-minecraft.env
+ExecStartPre=restic unlock
+ExecStart=restic --verbose forget --keep-last 7 --keep-daily 14 --keep-weekly 4 --keep-monthly 6
+ExecStartPost=restic unlock
